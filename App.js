@@ -24,7 +24,7 @@ const App = () => {
   return (
     <>
       <View style={{ flex: 1 }} >
-        <View style={{ flex: 1, backgroundColor: 'white', paddingTop: windowHeight - (windowHeight - 15) }}>
+        <ScrollView style={{ flex: 1, backgroundColor: 'white', paddingTop: windowHeight - (windowHeight - 15) }}>
           {/* section search bar */}
           <View style={{ marginHorizontal: jarakRL, flexDirection: 'row' }}>
             <View style={{ position: 'relative', flex: 1 }}>
@@ -149,7 +149,28 @@ const App = () => {
             </View>
           </View>
           {/* end of main menu */}
-        </View>
+
+          {/* horizontal line */}
+          <View style={{ backgroundColor: '#F2F2F4', height: 17, marginTop:20 }} >
+          </View>
+          {/* end of horizontal line */}
+
+          {/* News Section */}
+          <View style={{ paddingTop:16, paddingHorizontal: jarakRL }}>
+            {/* images */}
+            <View>
+              <Image source={require('./icon/kn.jpg')} style={{ height:170, width:'100%', borderRadius:10 }} />
+            </View>
+            {/* end of images */}
+            {/* title */}
+            <View style={{ paddingTop: 16, paddingBottom: 50 }} >
+              <Text style={{ fontSize: 16, fontWeight:'bold', color:'#1C1C1C' }} >Go-News</Text>
+              <Text style={{ fontSize: 14, fontWeight:'normal', color: '#7A7A7A' }}>Khabib Nurmagomedov menjadi juara UFC Lighweight</Text>
+            </View>
+            {/* end of title */}
+          </View>
+          {/* End of News Section */}
+        </ScrollView>
         {/* section bottom navigation */}
         <View style={{ height: 54, flexDirection: 'row', backgroundColor: 'white' }}>
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
