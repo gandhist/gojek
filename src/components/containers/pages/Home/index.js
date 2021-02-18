@@ -2,7 +2,8 @@ import React from 'react'
 import {
     ScrollView,
     View,
-    Dimensions
+    Dimensions,
+    StatusBar
 } from 'react-native';
 
 // molecules
@@ -20,9 +21,10 @@ import HomeGopay from "../../../containers/organisms/HomeGopay";
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const jarakRL = windowWidth - (windowWidth - 17);
-const Home = () => {
+const Home = ({navigation}) => {
     return (
         <View style={{ flex: 1 }} >
+            <StatusBar backgroundColor="white" />
             <ScrollView style={{ flex: 1, backgroundColor: 'white', paddingTop: windowHeight - (windowHeight - 15) }}>
                 {/* section search bar */}
                 <SearchFeature />
@@ -42,7 +44,7 @@ const Home = () => {
                 {/* end of horizontal line */}
 
                 {/* News Section */}
-                <GoNews image={require('../../../../assets/icon/kn.jpg')} title="Khabib Nurmagomedov menjadi juara UFC Lighweight" />
+                <GoNews image={require('../../../../assets/icon/kn.jpg')} title="Khabib Nurmagomedov menjadi juara UFC Lighweight" onPress={() => navigation.navigate('NewsDetail')} />
                 {/* End of News Section */}
 
                 {/* Internal Information */}
